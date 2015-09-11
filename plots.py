@@ -18,7 +18,7 @@ rr = np.loadtxt('model.dat', usecols=(2,))
 #calculating the log of quantities and correcting the ellipse fit to match the curve of the profiles
 rr = np.log(rr)
 rr = ((rr)/(2.0))
-rad2 = rad2/120
+rad2 = rad2/60
 lograd2 = np.log(rad2)
 nr = rad2.size
 
@@ -30,10 +30,10 @@ exp2 = np.linspace(0,0,nr)       #exponential profile 2
 
 #calculating intensities
 for i in range(0, nr):
-    comp[i] = Se*np.exp(-bn*((rad2[i]/(re/120))**1/4)-1)+So*np.exp(-rad2[i]/(rs1/120))+So2*np.exp(-rad2[i]/(rs2/120))   
-    srsc[i] = Se*np.exp(-bn*((rad2[i]/(re/120))**1/4)-1)
-    exp1[i] = So*np.exp(-rad2[i]/(rs1/120))
-    exp2[i] = So2*np.exp(-rad2[i]/(rs2/120))
+    comp[i] = Se*np.exp(-bn*((rad2[i]/(re/60))**1/4)-1)+So*np.exp(-rad2[i]/(rs1/60))+So2*np.exp(-rad2[i]/(rs2/60))   
+    srsc[i] = Se*np.exp(-bn*((rad2[i]/(re/60))**1/4)-1)
+    exp1[i] = So*np.exp(-rad2[i]/(rs1/60))
+    exp2[i] = So2*np.exp(-rad2[i]/(rs2/60))
 #calculating the log of everything
 
 logcomp = np.log(comp)
